@@ -2,7 +2,7 @@
 %global gem_name sensu-extensions
 
 Name:           rubygem-%{gem_name}
-Version:        1.7.1
+Version:        1.9.0
 Release:        1%{?dist}
 Summary:        The Sensu extension loader library
 Group:          Development/Languages
@@ -11,29 +11,29 @@ URL:            https://github.com/sensu/sensu-extensions
 Source0:        https://rubygems.org/gems/%{gem_name}-%{version}.gem
 Source1:        https://github.com/sensu/%{gem_name}/archive/v%{version}.tar.gz#/%{gem_name}-%{version}.tar.gz
 
-BuildRequires:  ruby(release)
 BuildRequires:  rubygems-devel
-BuildRequires:  ruby
 BuildRequires:  rubygem(rspec)
-BuildRequires:  rubygem(eventmachine)
 BuildRequires:  rubygem(sensu-json) >= 1.1.0
 BuildRequires:  rubygem(sensu-extension)
 BuildRequires:  rubygem(sensu-logger)
 BuildRequires:  rubygem(sensu-settings)
+BuildRequires:  rubygem(sensu-extensions-check-dependencies) = 1.0.1
 BuildRequires:  rubygem(sensu-extensions-debug) = 1.0.0
 BuildRequires:  rubygem(sensu-extensions-json) = 1.0.0
-BuildRequires:  rubygem(sensu-extensions-occurrences) = 1.1.0
+BuildRequires:  rubygem(sensu-extensions-occurrences) = 1.2.0
 BuildRequires:  rubygem(sensu-extensions-only-check-output) = 1.0.0
 BuildRequires:  rubygem(sensu-extensions-ruby-hash) = 1.0.0
 BuildRequires:  rubygem(sensu-extensions-system-profile) = 1.0.0
 
+Requires:       rubygems
 Requires:       rubygem(sensu-json) >= 1.1.0
 Requires:       rubygem(sensu-extension)
 Requires:       rubygem(sensu-logger)
 Requires:       rubygem(sensu-settings)
+Requires:       rubygem(sensu-extensions-check-dependencies) = 1.0.1
 Requires:       rubygem(sensu-extensions-debug) = 1.0.0
 Requires:       rubygem(sensu-extensions-json) = 1.0.0
-Requires:       rubygem(sensu-extensions-occurrences) = 1.1.0
+Requires:       rubygem(sensu-extensions-occurrences) = 1.2.0
 Requires:       rubygem(sensu-extensions-only-check-output) = 1.0.0
 Requires:       rubygem(sensu-extensions-ruby-hash) = 1.0.0
 
@@ -117,6 +117,9 @@ popd
 %{gem_instdir}/%{gem_name}.gemspec
 
 %changelog
+* Wed Dec 06 2017 Martin Mágr <mmagr@redhat.com> - 1.9.0-1
+- Updated to latest upstream release
+
 * Fri Dec 23 2016 Martin Mágr <mmagr@redhat.com> - 1.7.1-1
 - Updated to latest upstream release
 
